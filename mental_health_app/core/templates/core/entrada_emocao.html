@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entradas de Emoção</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Entradas de Emoção</h1>
+    </header>
+
+    <section>
+        <h2>Suas Entradas de Emoção</h2>
+        <ul>
+            {% for entrada in entradas %}
+                <li>
+                    {{ entrada.emocao }} - {{ entrada.data }} - {{ entrada.anotacao }}
+                </li>
+            {% empty %}
+                <p>Você ainda não registrou nenhuma emoção.</p>
+            {% endfor %}
+        </ul>
+    </section>
+
+    <section>
+        <h2>Adicionar Nova Entrada de Emoção</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }} 
+            <button type="submit">Adicionar</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Saúde Mental</p>
+    </footer>
+
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
