@@ -9,6 +9,7 @@ Este é um aplicativo de saúde mental desenvolvido com Python, Django, HTML e C
 - Exercícios de mindfulness
 - Recursos educacionais sobre saúde mental
 - Chat ao vivo com terapeutas
+- Chat com IA
 - Grupos de apoio online
 
 ## Tecnologias Utilizadas
